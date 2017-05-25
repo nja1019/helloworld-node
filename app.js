@@ -1,7 +1,7 @@
 const express = require('express')
 const myapp = express()
-var bodyParser = require('body-parser');
-myapp.use(bodyParser.json());
+var bodyParser = require('body-parser')
+myapp.use(bodyParser.json())
 
 myapp.get('/hello', function (req, res) {
     res.send('Hello')
@@ -27,7 +27,7 @@ myapp.post('/newfeeling', function (req, res) {
         return res.send("Error: Missing key information.")
     }
     else {
-        return res.send(req.body);
+        return res.send(req.body)
     }
 })
 
