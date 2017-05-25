@@ -1,6 +1,7 @@
 const express = require('express')
 const myapp = express()
 var bodyParser = require('body-parser')
+myapp.use(bodyParser.urlencoded())
 myapp.use(bodyParser.json())
 
 myapp.get('/hello', function (req, res) {
@@ -23,6 +24,7 @@ myapp.get('/feeling', function (req, res) {
 })
 
 myapp.post('/newfeeling', function (req, res) {
+    console.log(req.body)
     if(!req.body.myname || !req.body.feeling) {
         return res.send("Error: Missing key information.")
     }
